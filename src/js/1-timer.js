@@ -24,13 +24,13 @@ const options = {
   onClose(selectedDates) {
     if (selectedDates[0] <= new Date()) {
       iziToast.error({
-        title: '',
+        title: 'Error',
         message: 'Please choose a date in the future',
         titleColor: '#FFFFFF',
         messageColor: '#FFFFFF',
         color: '#B51B1B',
         position: 'topRight',
-        iconUrl: '/img/bi_x.svg#clip0_602_57',
+        // iconUrl: '/img/bi_x.svg',
         iconColor: '#FFFFFF',
       });
       btnStart.disabled = true;
