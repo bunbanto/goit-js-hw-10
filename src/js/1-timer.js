@@ -30,8 +30,6 @@ const options = {
         messageColor: '#FFFFFF',
         color: '#B51B1B',
         position: 'topRight',
-        iconUrl: '/img/bi_x.svg',
-        iconColor: '#FFFFFF',
       });
       btnStart.disabled = true;
     } else {
