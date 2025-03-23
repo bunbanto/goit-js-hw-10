@@ -70,17 +70,19 @@ btnStart.addEventListener('click', () => {
   setDateTime.disabled = true;
 
   timerId = setInterval(() => {
-    const now = new Date();
-    const delta = selectedDate - now;
+    const timer = selectedDate - new Date();
 
-    if (delta <= 0) {
+    if (timer <= 0) {
       clearInterval(timerId);
-      iziToast.success({ title: 'Done!', message: 'Timer finished!' });
+      iziToast.success({
+        title: 'Done!',
+        message: 'Timer finished!',
+      });
       setDateTime.disabled = false;
       return;
     }
 
-    const { days, hours, minutes, seconds } = convertMs(delta);
+    const { days, hours, minutes, seconds } = convertMs(timer);
     timerFields.days.textContent = addLeadingZero(days);
     timerFields.hours.textContent = addLeadingZero(hours);
     timerFields.minutes.textContent = addLeadingZero(minutes);
